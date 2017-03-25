@@ -1,8 +1,11 @@
 ---
-title: First blog post
-description: This is our first post. Hello World!
-header: Hello World
+title: iOS App的几种HotPatch方案
+
+description: iOS App的几种HotPatch方案
+
+header: iOS App的几种HotPatch方案
 ---
+
 目前针对iOS平台上App的动态修复机制（HotFix）大致有四种方案：
 
 1. 使用率最高的JSPatch/wax/rollout是先把OC手动翻译成脚本语言，通过服务端下发后，在运行时阶段利用OC的动态特性去调用和替换OC方法，实现实时修复bug。
