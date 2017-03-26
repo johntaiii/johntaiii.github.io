@@ -15,15 +15,15 @@ header: Universal Links
 Universal Links(通用链接)是iOS9推出的一项新功能,当用户在iOS系统中任何地方：备忘录、浏览器或者其他App中的webview点击某个普通的Http/Https链接,（例如 http://163.com/63625.html）, 如果用户已经安装了我们的App, 且App已经支持Universal Links, 那么此时会调起我们的App并打开相应的界面。如果没有安装, 则直接打开原来的H5页面, 这是一个用户无感知的过程。
 
 
--------
-###二、听上去略神奇的技术是如何实现的
+
+### 二、听上去略神奇的技术是如何实现的
 
 iOS系统会在安装某个App时，从该App提供的Associated Domains下载一个json格式的文件（由App开发者提前上传到服务器上），这个文件包含一些Path，Associated Domains拼上这些Path就组成了该App相关的Universal Liks，并存储在iOS系统中。这样，在用户点击系统中无论某个App中的链接时，若与已存储的某个Universal Links匹配，就触发了该功能。
 
------
 
 
-###三、有哪些明明白白的优点
+### 三、有哪些明明白白的优点
+
 * **唯一性:** 不像自定义的Scheme, 因为Universal Links使用标准的Http/Https, 所以不能被其它的App声明。
 
 * **安全:** 当用户的手机上安装了我们的App,那么iOS系统会去我们的网站下载一个说明文件(这个说明文件声明了我们App可以打开哪些类型的Http链接).因为只有我们自己才能上传文件到网站上,所以网站和App之间的关联是安全的。
@@ -34,8 +34,8 @@ iOS系统会在安装某个App时，从该App提供的Associated Domains下载�
 
 * **私密** 其它App可以在不需要知道我们的App是否安装的情况下和我们的app相互通信。
 
--------
-###四、如何集成Universal Links
+
+### 四、如何集成Universal Links
 
 **1. 创建包含appID和路径的说明文件**
 
@@ -104,9 +104,8 @@ applinks: www.163.com
 
 * 长按该链接,在出现的弹出菜单中第二项是“在'XXX'中打开”
 
------
 
-##五、注意事项
+## 五、注意事项
 
 1. 服务端需要支持Https，并且不支持任何重定向。
 2. paths 可以设置通配符，即只是一个星号，如果想打开APP 而不管路径是什么。
@@ -115,9 +114,13 @@ applinks: www.163.com
 
 
 -----
+
 *参考*
 [1. Support Universal Links](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
+
 [2. iOS Universal Links(通用链接)](https://yohunl.com/ios-universal-links-tong-yong-lian-jie/)
+
 [3. iOS 9学习系列：打通 iOS 9 的通用链接（Universal Links）](http://www.cocoachina.com/ios/20150902/13321.html)
+
 [4.测试JSON文件格式是否合法（Apple官方工具）](https://search.developer.apple.com/appsearch-validation-tool/)
 
