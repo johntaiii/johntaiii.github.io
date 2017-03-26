@@ -15,7 +15,6 @@ header: Universal Links
 Universal Links(通用链接)是iOS9推出的一项新功能,当用户在iOS系统中任何地方：备忘录、浏览器或者其他App中的webview点击某个普通的Http/Https链接,（例如 http://163.com/63625.html）, 如果用户已经安装了我们的App, 且App已经支持Universal Links, 那么此时会调起我们的App并打开相应的界面。如果没有安装, 则直接打开原来的H5页面, 这是一个用户无感知的过程。
 
 
-
 ### 二、听上去略神奇的技术是如何实现的
 
 iOS系统会在安装某个App时，从该App提供的Associated Domains下载一个json格式的文件（由App开发者提前上传到服务器上），这个文件包含一些Path，Associated Domains拼上这些Path就组成了该App相关的Universal Liks，并存储在iOS系统中。这样，在用户点击系统中无论某个App中的链接时，若与已存储的某个Universal Links匹配，就触发了该功能。
