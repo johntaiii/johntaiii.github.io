@@ -8,7 +8,8 @@ header: Universal Links
 
 ---
 
-###一、什么是Universal Links
+### 一、什么是Universal Links
+
 在iOS9之前,对于从各种从Safari、UIWebView或者WKWebView中唤醒App的需求, 我们只能使用Scheme，但是这种方式有个缺点, 就是需要提前判断系统中是否安装了能够响应此Scheme的App, 而且很多网页中的判断是有问题的, 可能会出现空白页的情况。另外,微信机（wu）智（chi）地禁用了该功能。这意味着从微信中没法直接调起我们的App。
 
 Universal Links(通用链接)是iOS9推出的一项新功能,当用户在iOS系统中任何地方：备忘录、浏览器或者其他App中的webview点击某个普通的Http/Https链接,（例如 http://163.com/63625.html）, 如果用户已经安装了我们的App, 且App已经支持Universal Links, 那么此时会调起我们的App并打开相应的界面。如果没有安装, 则直接打开原来的H5页面, 这是一个用户无感知的过程。
