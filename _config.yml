@@ -5,10 +5,10 @@ url: "https://johntaiii.github.io"
 author:
   name: "Jonn Tai"
   email: "john_tai@hotmail.com"
-  url: ""
+  url: "https://johntaiii.github.io"
 
 # Build settings
-baseurl: https://johntaiii.github.io/  # Change this to your relative path (ex: /blog/), or leave just a /
+baseurl: https://johntaiii.github.io  # Change this to your relative path (ex: /blog/), or leave just a /
 markdown: kramdown
 source: .
 destination: ./_site
