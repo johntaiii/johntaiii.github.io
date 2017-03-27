@@ -1,14 +1,14 @@
 # Site settings
 title: JohnTai's Blog
 description: "JohnTai's Blog"
-url: "https://johntaiii.github.io"
+url: "https://johntaiii.github.io/blog"
 author:
   name: "Jonn Tai"
   email: "john_tai@hotmail.com"
-  url: "https://johntaiii.github.io"
+  url: "https://johntaiii.github.io/blog"
 
 # Build settings
-baseurl: https://johntaiii.github.io  # Change this to your relative path (ex: /blog/), or leave just a /
+baseurl: /blog  # Change this to your relative path (ex: /blog/), or leave just a /
 markdown: kramdown
 source: .
 destination: ./_site
