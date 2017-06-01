@@ -1,4 +1,5 @@
-这两天看了下HealthKit，发现还挺有意思的，特别是苹果归纳了基本上现实生活中所有的健康和运动相关单位类型...
+
+晚上看了下HealthKit，发现还挺有意思的，特别是苹果归纳了基本上现实生活中所有的健康和运动相关单位类型…
 
 #### 一、什么是HealthKit
 
@@ -13,11 +14,7 @@
 
 简而言之，HealthKit整合了不同APP的数据并共享。为了达到这个目的，框架预先定义了一组描述用户健康信息的数据类型和单位，其他APP需要按照这种统一的规范提供或获取数据。
 
-##### 1. 存储
-
-HealthKit所有的数据都存储在一个名为HealthKit Store的加密数据库中。
-
-##### 2.对象
+##### 1.对象
 
 HealthKit中的数据对象主要分为2类：
 
@@ -31,11 +28,21 @@ Type | 数据的类型
 Start date | 数据开始的时间
 End date | 数据结束的时间
 
-##### 3.数据
+##### 2.数据
 
 为了让数据具有实际物理意义，首先需要为数据中的值指定单位。在创建之前介绍的样本数据的时候，就需要为数据添加对应的单位。HealthKit中通过`HKUnit`来创建HealthKit支持的基本单位，比如：``` [HKUnit mileUnit] ```就实例化了现实中的单位**米**。
 
 有了基本单位，还需要加上具体的数值才能构成一个具有现实意义的数据，```HKQuantity```就是一个由单位和数值构成的数据类，具体实例化方式为：``` [HKQuantity quantityWithUnit:[HKUnit mileUnit] doubleValue:10]```这样就表达了现实中的10米。
+##### 3. 存储
+
+HealthKit所有的数据都存储在一个名为HealthKit Store的加密数据库中。
+
+保存数据比较简单，通过Sava函数即可：
+
+```
+- (void)saveObject:(HKObject *)object withCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion;
+```
+查询数据比较麻烦，需要先通过数据类型（HKSampleType）、过滤条件（NSPredicate）、排序方式（NSSortDescriptor）构建一个查询条件（HKSampleQuery）对象交给HealthKit Store执行。
 
 #### 三、隐私说明
 
